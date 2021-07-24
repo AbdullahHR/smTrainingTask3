@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Methods: TASK 1 Entries</title>
+    
+   <link rel="stylesheet" href="css/style.css">   
+</head>
+
+
+<body>
+    <div class = "Container">
+        <form id="myForm" action="main.php" method = "POST">
+
+
+         <!--Motor1-->
+        <h3>Motor1</h3>
+        <div class = "motor1">
+        <input type="range" min = "-90" max = "90" value="0" id = "myRange1" class = "slider" name = "motor1">
+        <p>Value: <span id = "value1"></span></p>
+        </div><br>
+
+
+        <!--Motor2-->
+        <h3>Motor2</h3>
+        <div class = "motor2">
+        <input type="range" min = "-90" max = "90" value="0" id = "myRange2" class = "slider" name = "motor2">
+        <p>Value: <span id = "value2"></span></p>
+        </div><br>
+
+
+        <!--Motor3-->
+        <h3>Motor3</h3>
+        <div class = "motor3">
+        <input type="range" min = "-90" max = "90" value="0" id = "myRange3" class = "slider" name = "motor3">
+        <p>Value: <span id = "value3"></span></p>
+        </div><br>
+
+
+        <!--Motor4-->
+        <h3>Motor4</h3>
+        <div class = "motor4">
+        <input type="range" min = "-90" max = "90" value="0" id = "myRange4" class = "slider" name = "motor4">
+        <p>Value: <span id = "value4"></span></p>
+        </div><br>
+
+
+        <!--Motor5-->
+        <h3>Motor5</h3>
+        <div class = "motor5">
+        <input type="range" min = "-90" max = "90" value="0" id = "myRange5" class = "slider" name = "motor5">
+        <p>Value: <span id = "value5"></span></p>
+        </div><br>
+
+
+        <!--Motor6-->
+        <h3>Motor6</h3>
+        <div class = "motor6">
+        <input type="range" min = "-90" max = "90" value="0" id = "myRange6" class = "slider" name = "motor6">
+        <p>Value: <span id = "value6"></span></p>
+        </div>
+
+
+
+        <input class="button, bt1" type="submit" value = "Save" name = save> 
+        <input class="button" type="submit" value = "Start" name = start>
+
+        
+         <!--Forward-->
+        <div class = "movement1">
+            <input class="buttonf" type="submit" value = "Forward" name = forward>
+        </div><br>
+
+        <div class="inline">
+        <!--Right-->
+        <div class = "movement2">
+            <input class="buttonr" type="submit" value = "Right" name = right>
+        </div><br>
+
+        <!--Stop-->
+        <div class = "movement5">
+            <input class="buttons" type="submit" value = "Stop" name = stop>
+        </div><br>
+
+        <!--Left-->
+        <div class = "movement4">
+            <input class="buttonl" type="submit" value = "Left" name = left>
+        </div><br>
+        </div>
+
+        <!--Backward-->
+        <div class = "movement3">
+            <input class="buttonb" type="submit" value = "Backward" name = backward>
+        </div><br>
+
+        </form>
+    </div>
+
+    <script>
+        window.watsonAssistantChatOptions = {
+            integrationID: "9f7ca963-f124-4df9-8ce5-96a9f669b055", // The ID of this integration.
+            region: "eu-gb", // The region your integration is hosted in.
+            serviceInstanceID: "3c3ba998-0b5f-415d-9f57-3869e3956c5a", // The ID of your service instance.
+            onLoad: function(instance) { instance.render(); }
+          };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+          document.head.appendChild(t);
+        });
+      </script>
+
+</body>
+
+<script src="script/main.js"></script>
+</html>

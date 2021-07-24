@@ -1,0 +1,205 @@
+{
+  "intents": [
+    {
+      "intent": "تحريك",
+      "examples": [
+        {
+          "text": "طريقة"
+        },
+        {
+          "text": "كيف"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ترحيب",
+      "examples": [
+        {
+          "text": "السلام عليكم"
+        },
+        {
+          "text": "الو"
+        },
+        {
+          "text": "سلام"
+        },
+        {
+          "text": "مرحبا"
+        },
+        {
+          "text": "هاي"
+        },
+        {
+          "text": "هلا"
+        }
+      ],
+      "description": "بدء المحادثة"
+    },
+    {
+      "intent": "شكر",
+      "examples": [
+        {
+          "text": "تمام"
+        },
+        {
+          "text": "شكرا"
+        },
+        {
+          "text": "شكرن"
+        },
+        {
+          "text": "لا"
+        },
+        {
+          "text": "يعطيك العافية"
+        }
+      ]
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "مافهمت عليك، تبي تعرف طريقة عمل الروبوت اكتب كيف وبعلمك"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_2_1627116060947",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "مهند في خدمتك، أتمنى إنك تستمتع بتجربتك في الموقع"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#شكر",
+      "dialog_node": "node_2_1627116060947",
+      "previous_sibling": "node_7_1627114589046"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "ياهلا فيك أنا مهند، تفضل كيف أقدر أساعدك؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_3_1627115391847"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "عندك 6 محركات يمديك تتحكم في حركتهم عن طريق تحريك المؤشر في المنزلق الخاص بكل محرك"
+              },
+              {
+                "text": "-"
+              },
+              {
+                "text": "القاعدة تحصل أزرار التحكم تحت  يمديك تتحكم في حركتها بعد"
+              },
+              {
+                "text": "-"
+              },
+              {
+                "text": " أتمنى وضحت لك طريقة تحريك الروبوت، هل في شيء ثاني أساعدك فيه؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#تحريك",
+      "dialog_node": "node_7_1627114589046",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "ياهلا فيك أنا مهند، تفضل كيف أقدر أساعدك؟ "
+              },
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#ترحيب",
+      "dialog_node": "Welcome",
+      "previous_sibling": "node_3_1627115391847"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "SiteChatbot",
+  "language": "en",
+  "description": ""
+}
